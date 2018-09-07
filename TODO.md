@@ -44,10 +44,21 @@
   7 = 5 hours
   10 = full day + ??
 
+  (5) add soccer players from certain nations
+  (4/5) if it is a top player, photo of player added to div with the player name
+  (2/3) turn the title box into a nation box (where you enter the players nation)
+  (4) players from the same nation will be added to their nation page
+  (4) clicking on the nation after adding a player and their corresponding nation will take you to the nation page with all players added from that nation
+  (5) add pics of flags to top of each nation page
+  (5) add home button to go back to the player-add page
+  (6/7) search bar
+
+
+
   *(5) add due date
   *(7) time stamps (moment.js)
   (5) format the display of the items in a list (need to add more detail)
-  (??) fix the layout
+  (5) fix the layout
   (7) color coded priority
   highlight certain items
   mouse over to see details
