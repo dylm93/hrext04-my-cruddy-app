@@ -69,6 +69,13 @@ if (inputKey === 'Brazil' && $(".brazil-players").length === 0) {
     $(".france-players").hide();
     $(".portugal-players").hide();
     $(".header").hide();
+    $(".search-button").hide();
+    $(".search").hide();
+
+    spin = document.createElement("div")
+    spin.className = 'spin';
+    var degAngle = 60;
+    $('.spin').delay(300).animate({rotate: degAngle+'deg'}, 500);
 
   } else if (inputKey === 'Brazil' && $(".brazil-players").length !== 0) {
     $(".brazil-players").append(', ' + inputValue);
@@ -82,6 +89,8 @@ if (inputKey === 'Brazil' && $(".brazil-players").length === 0) {
     $(".portugal-players").hide();
     $(".france-players").hide();
     $(".header").hide();
+    $(".search-button").hide();
+    $(".search").hide();
   }
 
 if (inputKey === 'Argentina' && $(".argentina-players").length === 0) {
@@ -99,6 +108,8 @@ if (inputKey === 'Argentina' && $(".argentina-players").length === 0) {
     $(".france-players").hide();
     $(".portugal-players").hide();
     $(".header").hide();
+    $(".search-button").hide();
+    $(".search").hide();
 
   } else if (inputKey === 'Argentina' && $(".argentina-players").length !== 0) {
     $(".argentina-players").append(', ' + inputValue);
@@ -112,6 +123,8 @@ if (inputKey === 'Argentina' && $(".argentina-players").length === 0) {
     $(".portugal-players").hide();
     $(".france-players").hide();
     $(".header").hide();
+    $(".search-button").hide();
+    $(".search").hide();
   }
   
 
@@ -130,6 +143,8 @@ if (inputKey === 'France') {
     $(".argentina-players").hide();
     $(".portugal-players").hide();
     $(".header").hide();
+    $(".search-button").hide();
+    $(".search").hide();
 
   } else if (inputKey === 'France' && $(".france-players").length !== 0) {
     $(".france-players").append(', ' + inputValue);
@@ -142,6 +157,8 @@ if (inputKey === 'France') {
     $(".argentina-players").hide();
     $(".portugal-players").hide();
     $(".header").hide();
+    $(".search-button").hide();
+    $(".search").hide();
   }
 
 if (inputKey === 'Portugal') {
@@ -159,7 +176,10 @@ if (inputKey === 'Portugal') {
     $(".france-players").hide();
     $(".argentina-players").hide();
     $(".header").hide();
+    $(".search-button").hide();
+    $(".search").hide();
   }
+
 
  else if (inputKey === 'Portugal' && $(".portugal-players").length !== 0) {
     $(".portugal-players").append(', ' + inputValue);
@@ -172,9 +192,92 @@ if (inputKey === 'Portugal') {
     $(".argentina-players").hide();
     $(".france-players").hide();
     $(".header").hide();
+    $(".search-button").hide();
+    $(".search").hide();
   }
 
 
+
+$(".search-button").on("click", function(){
+
+  let nationKey = $(".search").val();
+  $(".search").val("");
+
+  if (nationKey === 'Brazil') {
+    var $brazil = $("<img src = 'brazil.png'>")
+    $(".nation-flag").append($brazil);
+    $(".nation-flag").show();
+    $(".nation-players").show();
+    $(".brazil-players").show();
+    $(".argentina-players").hide();
+    $(".portugal-players").hide();
+    $(".france-players").hide();
+    $(".header").hide();
+    $(".user-input-title").hide();
+    $(".user-input-body").hide();
+    $(".add-text-btn").hide();
+    $(".search-button").hide();
+    $(".search").hide();
+  }
+
+  if (nationKey === 'Argentina') {
+    var $argentina = $("<img src = 'argentina.png'>")
+    $(".nation-flag").append($argentina);
+    $(".nation-flag").show();
+    $(".nation-players").show();
+    $(".argentina-players").show();
+    $(".brazil-players").hide();
+    $(".portugal-players").hide();
+    $(".france-players").hide();
+    $(".header").hide();
+    $(".user-input-title").hide();
+    $(".user-input-body").hide();
+    $(".add-text-btn").hide();
+    $(".search-button").hide();
+    $(".search").hide();
+  }
+
+  if (nationKey === 'France') {
+    var $france = $("<img src = 'france.png'>")
+    $(".nation-flag").append($france);
+    $(".nation-flag").show();
+    $(".nation-players").show();
+    $(".france-players").show();
+    $(".brazil-players").hide();
+    $(".portugal-players").hide();
+    $(".argentina-players").hide();
+    $(".header").hide();
+    $(".user-input-title").hide();
+    $(".user-input-body").hide();
+    $(".add-text-btn").hide();
+    $(".search-button").hide();
+    $(".search").hide();
+  }
+
+  if (nationKey === 'Portugal') {
+    var $portugal = $("<img src = 'portugal.png'>")
+    $(".nation-flag").append($portugal);
+    $(".nation-flag").show();
+    $(".nation-players").show();
+    $(".portugal-players").show();
+    $(".brazil-players").hide();
+    $(".france-players").hide();
+    $(".argentina-players").hide();
+    $(".header").hide();
+    $(".user-input-title").hide();
+    $(".user-input-body").hide();
+    $(".add-text-btn").hide();
+    $(".search-button").hide();
+    $(".search").hide();
+  }
+
+
+
+
+
+
+
+});
 
 
     
@@ -213,6 +316,8 @@ $(".home").on("click", function(){
   $(".add-text-btn").show();
   $(".nation-players").hide();
   $(".header").show();
+  $(".search-button").show();
+  $(".search").show();
 
 
 });
