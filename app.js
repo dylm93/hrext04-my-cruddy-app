@@ -18,10 +18,10 @@ $(document).ready(function() {
     $(".add-text-btn").hide();
 
 // var nationArray = [
-// {nation: 'brazil', flag: "<img src = 'brazil.png'>"},
-// {nation: 'argentina', flag: "<img src = 'argentina.png'>"},
-// {nation: 'france', flag: "<img src = 'france.png'>"},
-// {nation: 'portugal', flag: "<img src = 'portugal.png'>"}
+// {nation: 'Brazil', flag: "<img src = 'brazil.png'>"},
+// {nation: 'Argentina', flag: "<img src = 'argentina.png'>"},
+// {nation: 'France', flag: "<img src = 'france.png'>"},
+// {nation: 'Portugal', flag: "<img src = 'portugal.png'>"}
 // ]
 
 // for (var i = 0; i < nationArray.length; i++) {
@@ -29,7 +29,7 @@ $(document).ready(function() {
 
 // if (inputKey === nationArray[i].nation && $("." + nationArray[i].nation + "-players").length === 0) { 
 //     var country = nationArray[i].nation;
-//     var country = country.slice(1, country[country.length-1]); 
+//     // var country = country.slice(1, country[country.length-1]); 
 //     console.log(country)
 //     country = document.createElement("div")
 //     country.className = country + '-players';
@@ -74,8 +74,10 @@ if (inputKey === 'Brazil' && $(".brazil-players").length === 0) {
     $(".search-button").hide();
     $(".search").hide();
 
+} else if (inputKey === 'Brazil' && brazilPlayersArray.includes(inputValue)) {
+    alert('Player already added!')
 
-  } else if (inputKey === 'Brazil' && $(".brazil-players").length !== 0) {
+} else if (inputKey === 'Brazil' && $(".brazil-players").length !== 0) {
     $(".brazil-players").append(', ' + inputValue);
     brazilPlayersArray.push(inputValue);
     $(".nation-players").append($(".brazil-players"));
@@ -90,6 +92,7 @@ if (inputKey === 'Brazil' && $(".brazil-players").length === 0) {
     $(".header").hide();
     $(".search-button").hide();
     $(".search").hide();
+
   }
 
 if (inputKey === 'Argentina' && $(".argentina-players").length === 0) {
@@ -112,7 +115,10 @@ if (inputKey === 'Argentina' && $(".argentina-players").length === 0) {
     $(".search-button").hide();
     $(".search").hide();
 
-  } else if (inputKey === 'Argentina' && $(".argentina-players").length !== 0) {
+} else if (inputKey === 'Argentina' && argentinaPlayersArray.includes(inputValue)) {
+    alert('Player already added!')
+
+} else if (inputKey === 'Argentina' && $(".argentina-players").length !== 0) {
     $(".argentina-players").append(', ' + inputValue);
     argentinaPlayersArray.push(inputValue)
     $(".nation-players").append($(".argentina-players"));
@@ -149,7 +155,10 @@ if (inputKey === 'France' && $(".france-players").length === 0) {
     $(".search-button").hide();
     $(".search").hide();
 
-  } else if (inputKey === 'France' && $(".france-players").length !== 0) {
+} else if (inputKey === 'France' && francePlayersArray.includes(inputValue)) {
+    alert('Player already added!')
+
+} else if (inputKey === 'France' && $(".france-players").length !== 0) {
     $(".france-players").append(', ' + inputValue);
     francePlayersArray.push(inputValue)
     $(".nation-players").append($(".france-players"));
@@ -166,8 +175,7 @@ if (inputKey === 'France' && $(".france-players").length === 0) {
     $(".search").hide();
   }
 
-
-if (inputKey === 'Portugal') {
+if (inputKey === 'Portugal' && $(".portugal-players").length === 0) {
     portugal = document.createElement("div")
     portugal.className = 'portugal-players';
     portugal.append(inputKey + ': ')
@@ -181,15 +189,16 @@ if (inputKey === 'Portugal') {
     $(".nation-flag").append($portugal);
     portugal = $(".portugal-players")[0];
     $(".brazil-players").hide();
-    $(".france-players").hide();
     $(".argentina-players").hide();
+    $(".france-players").hide();
     $(".header").hide();
     $(".search-button").hide();
     $(".search").hide();
-  }
 
+} else if (inputKey === 'Portugal' && portugalPlayersArray.includes(inputValue)) {
+    alert('Player already added!')
 
- else if (inputKey === 'Portugal' && $(".portugal-players").length !== 0) {
+} else if (inputKey === 'Portugal' && $(".portugal-players").length !== 0) {
     $(".portugal-players").append(', ' + inputValue);
     portugalPlayersArray.push(inputValue)
     $(".nation-players").append($(".portugal-players"));
@@ -197,13 +206,16 @@ if (inputKey === 'Portugal') {
     $(".nation-flag").append($portugal);
     $(".nation-flag").show();
     $(".nation-players").show();
+    $(".portugal-players").show();
     $(".brazil-players").hide();
-    $(".argentina-players").hide();
     $(".france-players").hide();
+    $(".argentina-players").hide();
     $(".header").hide();
     $(".search-button").hide();
     $(".search").hide();
   }
+
+
 
 
 
@@ -365,9 +377,6 @@ if (playersFrance.includes(playerKey) && francePlayersArray.includes(playerKey))
 
 } 
 
-if (!playersPortugal.includes(playerKey) && !playersFrance.includes(playerKey) && !playersArgentina.includes(playerKey) && !playersBrazil.includes(playerKey)) {
-    alert('Player not found!')
-}
 
 });
 
